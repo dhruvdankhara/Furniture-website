@@ -1,13 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
 body {
   overflow-x: hidden;
-  position: relative;
 }
 
 body {
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  line-height: 28px;
   color: #6a6a6a;
   font-size: 14px;
   background-color: #eff2f1;
@@ -15,18 +14,13 @@ body {
 
 a {
   text-decoration: none;
-  -webkit-transition: 0.3s all ease;
-  -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
-  color: #2f2f2f;
-  text-decoration: underline;
+  color: #5f97d8;
 }
+
 a:hover {
   color: #2f2f2f;
   text-decoration: none;
-}
-a.more {
-  font-weight: 600;
 }
 
 .custom-navbar {
@@ -34,22 +28,18 @@ a.more {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 .custom-navbar .navbar-brand {
   font-size: 32px;
   font-weight: 600;
 }
+
 .custom-navbar .navbar-brand > span {
   opacity: 0.4;
 }
+
 .custom-navbar .navbar-toggler {
   border-color: transparent;
-}
-
-.custom-navbar .navbar-toggler:active,
-.custom-navbar .navbar-toggler:focus {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  outline: none;
 }
 
 @media (min-width: 992px) {
@@ -67,18 +57,17 @@ a.more {
   position: relative;
 }
 
-@media (min-width: 768px) {
-  .custom-navbar .custom-navbar-nav li a:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 8px;
-    right: 8px;
-    background: #f9bf29;
-    height: 5px;
-    width: 0;
-  }
+.custom-navbar .custom-navbar-nav li a:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  background: #f9bf29;
+  height: 5px;
+  width: 0;
 }
+
 .custom-navbar .custom-navbar-nav li a:hover {
   opacity: 1;
 }
@@ -94,29 +83,13 @@ a.more {
 /* hero section start  */
 .hero {
   background: #3b5d50;
-  padding: calc(4rem - 30px) 0 0rem 0;
-}
-@media (min-width: 768px) {
-  .hero {
-    padding: calc(4rem - 30px) 0 4rem 0;
-  }
-}
-@media (min-width: 992px) {
-  .hero {
-    padding: calc(8rem - 30px) 0 8rem 0;
-  }
+  padding: 7rem 0;
 }
 
 .hero h1 {
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 30px;
-}
-
-@media (min-width: 1400px) {
-  .hero h1 {
-    font-size: 54px;
-  }
 }
 
 .hero .hero-img-wrap {
@@ -157,46 +130,52 @@ a.more {
 }
 
 .btn {
-  font-weight: 600;
-  padding: 12px 30px;
-  border-radius: 30px;
   color: #ffffff;
   background: #2f2f2f;
   border-color: #2f2f2f;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
 }
+
 .btn:hover {
   color: #ffffff;
   background: #222222;
   border-color: #222222;
 }
-.btn:active,
-.btn:focus {
+
+.btn:active {
   outline: none !important;
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
+
 .btn.btn-primary {
   background: #3b5d50;
   border-color: #3b5d50;
 }
+
 .btn.btn-primary:hover {
   background: #314d43;
   border-color: #314d43;
 }
+
 .btn.btn-secondary {
   color: #2f2f2f;
   background: #f9bf29;
   border-color: #f9bf29;
 }
+
 .btn.btn-secondary:hover {
   background: #f8b810;
   border-color: #f8b810;
 }
+
 .btn.btn-white-outline {
   background: transparent;
   border-width: 2px;
   border-color: rgba(255, 255, 255, 0.3);
 }
+
 .btn.btn-white-outline:hover {
   border-color: white;
   color: #ffffff;
@@ -207,14 +186,12 @@ a.more {
 }
 
 /* product section */
-
 .product-section {
   padding: 7rem 0;
 }
 
 .product-section .product-item {
   text-align: center;
-  text-decoration: none;
   display: block;
   position: relative;
   padding-bottom: 50px;
@@ -229,17 +206,15 @@ a.more {
 }
 
 .product-section .product-item h3 {
-  font-weight: 600;
   font-size: 16px;
+  font-weight: 600;
+  color: #2f2f2f;
+  text-decoration: none;
 }
 
 .product-section .product-item strong {
   font-weight: 800 !important;
   font-size: 18px !important;
-}
-
-.product-section .product-item h3,
-.product-section .product-item strong {
   color: #2f2f2f;
   text-decoration: none;
 }
@@ -248,21 +223,15 @@ a.more {
   position: absolute;
   width: 35px;
   height: 35px;
-  display: inline-block;
   background: #2f2f2f;
-  bottom: 15px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: -17.5px;
   border-radius: 50%;
   transition: 0.3s all ease;
-}
-
-.product-section .product-item .icon-cross img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-section .product-item:hover .product-thumbnail {
@@ -276,15 +245,10 @@ a.more {
 }
 
 .why-choose-section .img-wrap img {
-  border-radius: 20px;
-}
-
-.feature {
-  margin-bottom: 30px;
+  border-radius: 25px;
 }
 
 .feature .icon {
-  display: inline-block;
   position: relative;
   margin-bottom: 20px;
 }
@@ -303,7 +267,7 @@ a.more {
 /* popular product */
 
 .popular-product {
-  padding: 0 0 7rem 0;
+  padding: 0 0 10rem 0;
 }
 
 .popular-product .product-item-sm h3 {
@@ -323,14 +287,12 @@ a.more {
 }
 
 .popular-product .product-item-sm p {
-  line-height: 1.4;
   margin-bottom: 10px;
   font-size: 14px;
 }
 
 .popular-product .product-item-sm .thumbnail {
   margin-right: 10px;
-  flex: 0 0 120px;
   position: relative;
 }
 
@@ -458,31 +420,16 @@ a.more {
   padding: 7rem 0;
 }
 
-.form-control {
-  height: 50px;
-  border-radius: 10px;
-  font-family: "Inter", sans-serif;
+.untree_co-section .our-team {
+  display: flex;
+  gap: 1rem;
 }
-.form-control:active,
-.form-control:focus {
-  outline: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-color: #3b5d50;
-  -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
-}
-.form-control::-webkit-input-placeholder {
-  font-size: 14px;
-}
-.form-control::-moz-placeholder {
-  font-size: 14px;
-}
-.form-control:-ms-input-placeholder {
-  font-size: 14px;
-}
-.form-control:-moz-placeholder {
-  font-size: 14px;
+
+@media (max-width: 978px) {
+  .untree_co-section .our-team {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .service {
@@ -490,8 +437,6 @@ a.more {
 }
 .service .service-icon {
   border-radius: 10px;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 50px;
   flex: 0 0 50px;
   height: 50px;
   line-height: 50px;
