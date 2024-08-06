@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"); */
 
 body {
   overflow-x: hidden;
@@ -6,7 +6,7 @@ body {
 
 body {
   font-family: "Inter", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   color: #6a6a6a;
   font-size: 14px;
   background-color: #eff2f1;
@@ -30,7 +30,7 @@ a:hover {
 
 .custom-navbar .navbar-brand {
   font-size: 32px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .custom-navbar .navbar-brand > span {
@@ -45,7 +45,7 @@ a:hover {
 }
 
 .custom-navbar .custom-navbar-nav li a {
-  font-weight: 500;
+  font-weight: 400;
   color: #ffffff !important;
   opacity: 0.5;
   transition: 0.3s all ease;
@@ -79,13 +79,9 @@ a:hover {
 }
 
 .hero h1 {
-  font-weight: 700;
+  font-weight: 500;
   color: #ffffff;
   margin-bottom: 30px;
-}
-
-.hero .hero-img-wrap {
-  /* position: relative; */
 }
 
 .hero .hero-img-wrap img {
@@ -96,48 +92,19 @@ a:hover {
   z-index: 4;
 }
 
-@media (min-width: 768px) {
-  .hero .hero-img-wrap img {
-    /* right: 0px;
-    left: -100px; */
-  }
-}
-
-@media (min-width: 992px) {
-  .hero .hero-img-wrap img {
-    /* left: 0px;
-    top: -80px;
-    position: absolute;
-    right: -50px; */
-  }
-}
-
-@media (min-width: 1200px) {
-  .hero .hero-img-wrap img {
-    /* left: 0px;
-    top: -80px;
-    right: -100px; */
-  }
-}
-
 .btn {
   color: #ffffff;
   background: #2f2f2f;
   border-color: #2f2f2f;
   padding: 12px 30px;
   border-radius: 30px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .btn:hover {
   color: #ffffff;
   background: #222222;
   border-color: #222222;
-}
-
-.btn:active {
-  outline: none !important;
-  box-shadow: none;
 }
 
 .btn.btn-primary {
@@ -204,12 +171,12 @@ a:hover {
 .product-section .product-item h3 {
   text-decoration: none;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   color: #2f2f2f;
 }
 
 .product-section .product-item strong {
-  font-weight: 800;
+  font-weight: 600;
   font-size: 18px;
   color: #2f2f2f;
   text-decoration: none;
@@ -266,7 +233,7 @@ a:hover {
 
 .popular-product .product-item-sm h3 {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 500;
   color: #2f2f2f;
 }
 
@@ -325,7 +292,7 @@ a:hover {
 
 .footer-section .subscription-form h3 {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   color: #3b5d50;
 }
 
@@ -380,7 +347,7 @@ a:hover {
 
 .footer-section .footer-logo-wrap .footer-logo {
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: none;
   color: #3b5d50;
 }
