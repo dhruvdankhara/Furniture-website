@@ -1,5 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"); */
-
 body {
   overflow-x: hidden;
 }
@@ -67,6 +65,10 @@ a:hover {
 .custom-navbar .custom-navbar-nav li.active a {
   opacity: 1;
 }
+
+/* .custom-navbar .custom-navbar-nav li a.active + a:before{
+  width: calc(100% - 16px);
+} */
 
 .custom-navbar .custom-navbar-nav li.active a:before {
   width: calc(100% - 16px);
