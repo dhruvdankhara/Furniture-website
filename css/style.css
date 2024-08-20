@@ -66,10 +66,6 @@ a:hover {
   opacity: 1;
 }
 
-/* .custom-navbar .custom-navbar-nav li a.active + a:before{
-  width: calc(100% - 16px);
-} */
-
 .custom-navbar .custom-navbar-nav li.active a:before {
   width: calc(100% - 16px);
 }
@@ -139,6 +135,10 @@ a:hover {
 .btn.btn-white-outline:hover {
   border-color: white;
   color: #ffffff;
+}
+
+.text-primary {
+  color: #3b5d50 !important;
 }
 
 /* product section */
