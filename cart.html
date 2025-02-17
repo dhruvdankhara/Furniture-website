@@ -116,7 +116,9 @@
                     </div>
                   </td>
                   <td>$49.00</td>
-                  <td><a href="#" class="btn btn-black btn-sm">X</a></td>
+                  <td>
+                    <a href="#" class="btn btn-black btn-sm remove-btn">X</a>
+                  </td>
                 </tr>
 
                 <tr>
@@ -161,7 +163,9 @@
                     </div>
                   </td>
                   <td>₹7699.00</td>
-                  <td><a href="#" class="btn btn-black btn-sm">X</a></td>
+                  <td>
+                    <a href="#" class="btn btn-black btn-sm remove-btn">X</a>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -172,7 +176,7 @@
           <div class="col-md-6">
             <div class="row mb-5">
               <div>
-                <button class="btn btn-sm">Continue Shopping</button>
+                <button class="btn btn-sm ctn-btn">Continue Shopping</button>
               </div>
             </div>
             <div class="row">
@@ -189,7 +193,7 @@
                 />
               </div>
               <div class="col-md-4">
-                <button class="btn btn-black">Apply</button>
+                <button class="btn btn-black apply-btn">Apply</button>
               </div>
             </div>
           </div>
@@ -221,7 +225,9 @@
                 <div class="row">
                   <div class="col-md-12">
                     <a href="checkout.html" class="text-white">
-                      <button class="btn btn-black btn-lg py-3 btn-block">
+                      <button
+                        class="btn btn-black btn-lg py-3 btn-block ptc-btn"
+                      >
                         Proceed To Checkout
                       </button>
                     </a>
@@ -408,5 +414,34 @@
       </div>
     </footer>
     <!-- End Footer Section -->
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".ctn-btn").click(function () {
+          alert("Continue Shopping button clicked!");
+        });
+
+        $(".apply-btn").dblclick(function () {
+          alert("Apply button double-clicked!");
+        });
+
+        $(".ptc-btn").click(function () {
+          alert("Proceed To Checkout button clicked!");
+        });
+
+        $(".remove-btn").click(function () {
+          alert("Remove button clicked!");
+        });
+
+        $(".increase").dblclick(function () {
+          alert("Increase button double-clicked!");
+        });
+
+        $(".decrease").dblclick(function () {
+          alert("Decrease button double-clicked!");
+        });
+      });
+    </script>
   </body>
 </html>

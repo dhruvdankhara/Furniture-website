@@ -1,21 +1,30 @@
-const login = document.getElementById("loginForm");
+$(document).ready(function () {
+  $("#loginForm").submit(function (event) {
+    event.preventDefault();
+    let email = $("#email").val();
+    let password = $("#password").val();
+    let isValid = true;
 
-login.addEventListener("submit", function (event) {
-  event.preventDefault();
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
+    $(".error-message").remove();
 
-  const pattern = /^[A-z\d]+@[a-z]+\.[a-z]+$/;
+    const pattern = /^[A-z\d]+@[a-z]+\.[a-z]+$/;
 
-  if (!email.match(pattern)) {
-    alert("Enter valid email address.");
-    return;
-  }
+    if (!email.match(pattern)) {
+      $("#email").after(
+        '<span class="error-message text-danger">Enter valid email address.</span>'
+      );
+      isValid = false;
+    }
 
-  if (password.length < 7) {
-    alert("password must be 8 character");
-    return;
-  }
+    if (password.length < 8) {
+      $("#password").after(
+        '<span class="error-message text-danger">Password must be at least 8 characters.</span>'
+      );
+      isValid = false;
+    }
 
-  window.location.href = "index.html";
+    if (isValid) {
+      window.location.href = "index.html";
+    }
+  });
 });

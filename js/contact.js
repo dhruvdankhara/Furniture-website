@@ -1,28 +1,38 @@
-const contact = document.getElementById("contactForm");
+$(document).ready(function () {
+  $("#contactForm").submit(function (event) {
+    event.preventDefault();
+    let fname = $("#fname").val();
+    let email = $("#email").val();
+    let message = $("#message").val();
+    let isValid = true;
 
-contact.addEventListener("submit", function (event) {
-  event.preventDefault();
+    $(".error-message").remove();
 
-  const fname = document.getElementById("fname").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
+    const emailPattern = /^[A-z\d]+@[a-z]+\.[a-z]+$/;
 
-  if (!fname.trim()) {
-    alert("Enter Name.");
-    return;
-  }
+    if (!fname.trim()) {
+      $("#fname").after(
+        '<span class="error-message text-danger">Enter Name.</span>'
+      );
+      isValid = false;
+    }
 
-  const pattern = /^[A-z\d]+@[a-z]+\.[a-z]+$/;
+    if (!email.match(emailPattern)) {
+      $("#email").after(
+        '<span class="error-message text-danger">Enter valid email address.</span>'
+      );
+      isValid = false;
+    }
 
-  if (!email.match(pattern)) {
-    alert("Enter valid email address.");
-    return;
-  }
+    if (!message.trim()) {
+      $("#message").after(
+        '<span class="error-message text-danger">Enter your message.</span>'
+      );
+      isValid = false;
+    }
 
-  if (!message.trim()) {
-    alert("enter your message");
-    return;
-  }
-
-  window.location.href = "shop.html";
+    if (isValid) {
+      window.location.href = "shop.html";
+    }
+  });
 });

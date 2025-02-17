@@ -1,36 +1,70 @@
-const signup = document.getElementById("signupForm");
+$(document).ready(function () {
+  // Form validation
+  $("#signupForm").submit(function (event) {
+    event.preventDefault();
+    let name = $("#name").val();
+    let phone = $("#phone").val();
+    let email = $("#email").val();
+    let password = $("#password").val();
+    let isValid = true;
 
-signup.addEventListener("submit", function (event) {
-  event.preventDefault();
+    $(".error-message").remove();
 
-  const name = document.getElementById("name").value;
-  console.log("🚀 ~ name:", name);
-  const number = document.getElementById("phone").value;
-  console.log("🚀 ~ number:", typeof number);
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+    const emailPattern = /^[A-z\d]+@[a-z]+\.[a-z]+$/;
+    const phonePattern = /^\d{10}$/;
 
-  if (!name.trim()) {
-    alert("Enter Name.");
-    return;
-  }
+    if (name.trim() === "") {
+      $("#name").after(
+        '<span class="error-message text-danger">Name is required.</span>'
+      );
+      isValid = false;
+    }
 
-  if (number.length != 10) {
-    alert("Phone number length is must be 10 digits.");
-    return;
-  }
+    if (!phone.match(phonePattern)) {
+      $("#phone").after(
+        '<span class="error-message text-danger">Enter valid phone number.</span>'
+      );
+      isValid = false;
+    }
 
-  const pattern = /^[A-z\d]+@[a-z]+\.[a-z]+$/;
+    if (!email.match(emailPattern)) {
+      $("#email").after(
+        '<span class="error-message text-danger">Enter valid email address.</span>'
+      );
+      isValid = false;
+    }
 
-  if (!email.match(pattern)) {
-    alert("Enter valid email address.");
-    return;
-  }
+    if (password.length < 8) {
+      $("#password").after(
+        '<span class="error-message text-danger">Password must be at least 8 characters.</span>'
+      );
+      isValid = false;
+    }
 
-  if (password.trim().length < 7) {
-    alert("password must be 8 character");
-    return;
-  }
+    if (isValid) {
+      window.location.href = "index.html";
+    }
+  });
 
-  window.location.href = "login.html";
+  // Hover event
+  $("#signupForm button[type='submit']").hover(
+    function () {
+      $(this).css("background-color", "green");
+    },
+    function () {
+      $(this).css("background-color", "");
+    }
+  );
+
+  // Mouseover event
+  $("#signupForm input").mouseover(function () {
+    $(this).css("border-color", "blue");
+  });
+
+  // Keyboard event
+  $("#signupForm input").keydown(function (event) {
+    if (event.key === "Enter") {
+      alert("Enter key pressed!");
+    }
+  });
 });

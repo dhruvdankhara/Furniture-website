@@ -1,0 +1,17 @@
+<products>
+  <product>
+    <name>Nordic Chair</name>
+    <price>₹4999.00</price>
+    <image>images/product-1.png</image>
+  </product>
+  <product>
+    <name>Kruzo Aero Chair</name>
+    <price>₹7699.00</price>
+    <image>images/product-2.png</image>
+  </product>
+  <product>
+    <name>Ergonomic Chair</name>
+    <price>₹4299.00</price>
+    <image>images/product-3.png</image>
+  </product>
+</products>

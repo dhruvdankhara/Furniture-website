@@ -85,105 +85,6 @@
             <a href="shop.html" class="btn">Explore</a>
           </div>
           <!-- End Column 1 -->
-
-          <!-- Start Column 2 -->
-          <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-            <a class="product-item" href="cart.html">
-              <img
-                src="images/product-1.png"
-                class="img-fluid product-thumbnail"
-              />
-              <h3>Nordic Chair</h3>
-              <strong>₹4999.00</strong>
-
-              <span class="icon-cross">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <line
-                    x1="9"
-                    y1="4.37114e-08"
-                    x2="9"
-                    y2="18"
-                    stroke="white"
-                    stroke-width="2"
-                  />
-                  <line y1="9" x2="18" y2="9" stroke="white" stroke-width="2" />
-                </svg>
-              </span>
-            </a>
-          </div>
-          <!-- End Column 2 -->
-
-          <!-- Start Column 3 -->
-          <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-            <a class="product-item" href="cart.html">
-              <img
-                src="images/product-2.png"
-                class="img-fluid product-thumbnail"
-              />
-              <h3>Kruzo Aero Chair</h3>
-              <strong>₹7699.00</strong>
-
-              <span class="icon-cross">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <line
-                    x1="9"
-                    y1="4.37114e-08"
-                    x2="9"
-                    y2="18"
-                    stroke="white"
-                    stroke-width="2"
-                  />
-                  <line y1="9" x2="18" y2="9" stroke="white" stroke-width="2" />
-                </svg>
-              </span>
-            </a>
-          </div>
-          <!-- End Column 3 -->
-
-          <!-- Start Column 4 -->
-          <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-            <a class="product-item" href="cart.html">
-              <img
-                src="images/product-3.png"
-                class="img-fluid product-thumbnail"
-              />
-              <h3>Ergonomic Chair</h3>
-              <strong>₹4299.00</strong>
-
-              <span class="icon-cross">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <line
-                    x1="9"
-                    y1="4.37114e-08"
-                    x2="9"
-                    y2="18"
-                    stroke="white"
-                    stroke-width="2"
-                  />
-                  <line y1="9" x2="18" y2="9" stroke="white" stroke-width="2" />
-                </svg>
-              </span>
-            </a>
-          </div>
-          <!-- End Column 4 -->
         </div>
       </div>
     </div>
@@ -650,5 +551,48 @@
       </div>
     </footer>
     <!-- End Footer Section -->
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            let xmlDoc = this.responseXML;
+            let products = xmlDoc.getElementsByTagName("product");
+            let productsHtml = "";
+
+            for (let i = 0; i < products.length; i++) {
+              let name =
+                products[i].getElementsByTagName("name")[0].childNodes[0]
+                  .nodeValue;
+              let price =
+                products[i].getElementsByTagName("price")[0].childNodes[0]
+                  .nodeValue;
+              let image =
+                products[i].getElementsByTagName("image")[0].childNodes[0]
+                  .nodeValue;
+
+              productsHtml += `
+          <div class="col-12 col-md-4 col-lg-3 mb-5">
+            <a class="product-item" href="#">
+              <img src="${image}" class="img-fluid product-thumbnail" />
+              <h3 class="product-title">${name}</h3>
+              <strong class="product-price">${price}</strong>
+              <span class="icon-cross">
+                <img src="images/cross.svg" class="img-fluid" />
+              </span>
+            </a>
+          </div>
+        `;
+            }
+
+            $(".product-section .row").append(productsHtml);
+          }
+        };
+        xhr.open("GET", "js/products.xml", true);
+        xhr.send();
+      });
+    </script>
   </body>
 </html>
