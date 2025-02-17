@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Nordic Chair",
+    "price": 4999.0,
+    "image": "images/product-3.png"
+  },
+  {
+    "id": 2,
+    "name": "Nordic Chair",
+    "price": 4999.0,
+    "image": "images/product-1.png"
+  },
+  {
+    "id": 3,
+    "name": "Ergonomic Chair",
+    "price": 4299.0,
+    "image": "images/product-3.png"
+  },
+  {
+    "id": 4,
+    "name": "Kruzo Aero Chair",
+    "price": 7699.0,
+    "image": "images/product-2.png"
+  },
+  {
+    "id": 5,
+    "name": "Nordic Chair",
+    "price": 4900.0,
+    "image": "images/product-1.png"
+  },
+  {
+    "id": 6,
+    "name": "Nordic Chair",
+    "price": 4999.0,
+    "image": "images/product-3.png"
+  },
+  {
+    "id": 7,
+    "name": "Kruzo Aero Chair",
+    "price": 7799.0,
+    "image": "images/product-2.png"
+  },
+  {
+    "id": 8,
+    "name": "Nordic Chair",
+    "price": 4999.0,
+    "image": "images/product-1.png"
+  }
+]
